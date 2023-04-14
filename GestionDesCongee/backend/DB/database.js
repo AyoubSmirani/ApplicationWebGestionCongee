@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
     database: 'sql7612917',
      port:3306
 }); 
-conn.connect(function(err) { 
+connection.connect(function(err) { 
   if (err){console.log(err)};
   console.log('Database is connected successfully !'); 
 }); 
