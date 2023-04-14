@@ -2,11 +2,11 @@ var mysql = require('mysql');
 const config = require('./config.json')
 
 var conn = mysql.createConnection({
-    host: config.host, 
-    user: config.user, 
-    password: config.password,
-    database: config.database,
-     
+    host: 'sql7.freemysqlhosting.net', 
+    user: 'sql7612917', 
+    password: '4cSpjjwsLu',
+    database: 'sql7612917',
+     port:3306
 }); 
 conn.connect(function(err) { 
   if (err){console.log(err)};
