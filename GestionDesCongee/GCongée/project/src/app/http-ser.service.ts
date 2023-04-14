@@ -11,7 +11,7 @@ export class HttpSerService {
   constructor(private http:HttpClient,
     private JwtHelper:JwtHelperService) { }
  // url pour l'API
- url = 'http://localhost:5000/api'
+ url = 'https://congee-app-services-pro.onrender.com/api'
 
  // Méthode pour se connecter avec un utilisateur donné
  login(user:any){
