@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 const config = require('./config.json')
 
-var conn = mysql.createConnection({
+var connection = mysql.createConnection({
     host: 'sql7.freemysqlhosting.net', 
     user: 'sql7612917', 
     password: '4cSpjjwsLu',
@@ -12,4 +12,4 @@ conn.connect(function(err) {
   if (err){console.log(err)};
   console.log('Database is connected successfully !'); 
 }); 
-module.exports = conn
+module.exports = connection
