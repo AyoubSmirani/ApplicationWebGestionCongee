@@ -9,7 +9,7 @@ import { IconName } from 'ngx-bootstrap-icons';
 @Component({
   selector: 'app-rh-list-congee',
   templateUrl: './rh-list-congee.component.html',
-  styleUrls: ['./rh-list-congee.component.css'],
+  //styleUrls: ['./rh-list-congee.component.css'],
  
 })
 
