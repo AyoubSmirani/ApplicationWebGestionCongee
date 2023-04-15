@@ -6,7 +6,7 @@ import { LoadingSerService } from '../loading-ser.service';
 @Component({
   selector: 'app-list-employee',
   templateUrl: './list-employee.component.html',
-  //styleUrls: ['./list-employee.component.scss']
+  styleUrls: ['./list-employee.component.scss']
 })
 export class ListEmployeeComponent implements OnInit{
   // Importation des dépendances et services nécessaires
