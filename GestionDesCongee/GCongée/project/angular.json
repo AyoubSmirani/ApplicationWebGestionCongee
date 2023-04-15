@@ -19,11 +19,6 @@
             "polyfills": [
               "zone.js"
             ],
-     
-            
-            
-            
-            
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -73,21 +68,25 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "budgets": [
-              {
-                "type": "initial",
-                "maximumWarning": "4mb",
-                "maximumError": "5mb"
-              },
+          "options": {
+            "browserTarget": "project:build"
+          },
           "configurations": {
             "production": {
-              "browserTarget": "project:build:production"
-            },
-            "development": {
-              "browserTarget": "project:build:development"
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ]
             }
-          },
-          "defaultConfiguration": "development"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -107,6 +106,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
+           
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
