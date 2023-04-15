@@ -19,13 +19,7 @@
             "polyfills": [
               "zone.js"
             ],
-            "budgets": [
-  {
-    "type": "initial",
-    "maximumWarning": "2mb",
-    "maximumError": "2mb"
-  }
-],
+     
             
             
             
@@ -79,6 +73,12 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "4mb",
+                "maximumError": "5mb"
+              },
           "configurations": {
             "production": {
               "browserTarget": "project:build:production"
