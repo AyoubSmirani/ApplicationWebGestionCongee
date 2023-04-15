@@ -18,7 +18,7 @@ export class AjouterEmployeComponent {
    perPage: number = 4;
    currentPage: number = 1;
    totalRecords: number = this.data.length;
-   imagePath: string ='http://127.0.0.1:5000/getImage/use.png' ;
+   imagePath: string ='https://congee-app-services-pro.onrender.com/getImage/use.png' ;
    SelectEmployeeSexe = ['homme','femme'];
    SelectEmployeeRole = ['employe','chef département'];
    SelectChef:any = []
