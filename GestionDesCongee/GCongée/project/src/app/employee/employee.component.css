@@ -11,7 +11,7 @@
     padding: 10px 50px;
     border-radius: 10px;
     width: 1600px;
-    height: 100vh;
+    height: 140vh;
     border: 0.25px solid rgba(1, 1, 1, 0.132);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
@@ -20,7 +20,10 @@
     flex-direction: column;
 }
 
-
+.calendar_contain{
+    width: 400px;
+    height: 70vh;
+}
 }
 .emplo{
     height: 100vh;
