@@ -90,3 +90,10 @@
     ::-webkit-scrollbar-thumb:hover {
     background: rgb(112, 106, 106);  
     }
+    @media screen and (max-width: 600px) {
+        .notifi-box{
+            width: 100%;
+            position: none;
+            left: 0px;
+        }
+    }
