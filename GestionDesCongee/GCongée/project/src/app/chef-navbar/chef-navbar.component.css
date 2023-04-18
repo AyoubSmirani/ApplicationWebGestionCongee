@@ -114,6 +114,14 @@ align-items: center;
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}
+@media screen and (max-width: 600px) {
+  .dropdown-content{
+        width: 380px;
+        margin-right: 240px;
+        margin-top: 40px;
+    }
+   
+}
   
 
 
