@@ -27,3 +27,13 @@
 	color: red !important;
 	font-size: 15px;
 }
+@media (max-width: 600px) {
+	igx-dialog{
+        width: 500px;
+    }
+	.signInForm{
+		width: 100%;
+		height: 70vh;
+	}
+	/* additional styles for dialog content */
+  }
