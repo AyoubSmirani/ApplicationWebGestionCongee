@@ -59,7 +59,7 @@ export class ListEmployeeComponent implements OnInit{
    update(matricule:string){
     this.http.getEmploye(matricule).subscribe((data)=>{
        this.Updatedemployee = data;
-       this.imagePath = `http://127.0.0.1:5000/getImage/${this.Updatedemployee.image}`
+       this.imagePath = `https://congee-app-services-pro.onrender.com/getImage/${this.Updatedemployee.image}`
       console.log(this.imagePath)
       },(err)=>{
        console.log(err);
