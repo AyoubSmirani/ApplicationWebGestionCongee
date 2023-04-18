@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IButtonGroupEventArgs } from 'igniteui-angular';
+import { IButtonGroupEventArgs, IgxStepperOrientation } from 'igniteui-angular';
 import { delay } from 'rxjs';
 import { HttpSerService } from '../http-ser.service';
 import { LoadingSerService } from '../loading-ser.service';
@@ -23,6 +23,7 @@ export class ChefDemandeComponent {
  controleFileType:boolean = true
   Alerttitle!: string;
   message!: string;
+  orientation!:IgxStepperOrientation
 // chouf il stepper fil site 5atar fasa5t minha controle saisie
 // declaration des services
 constructor(private http:HttpSerService,private activated:ActivatedRoute,private load:LoadingSerService){}
@@ -56,7 +57,7 @@ constructor(private http:HttpSerService,private activated:ActivatedRoute,private
  }
 
  ngOnInit(): void {
-
+  this.getScreenSize();
    // Récupération du numéro de matricule depuis l'URL
    this.matricule = this.activated.snapshot.paramMap.get('matricule')
    // Appel au serveur pour récupérer les informations de l'employé correspondant
@@ -191,6 +192,15 @@ constructor(private http:HttpSerService,private activated:ActivatedRoute,private
   } 
 }
 
+@HostListener('window:resize', ['$event'])
+getScreenSize(event?: any) {
+ // this.screenWidth = ;
+  if (window.innerWidth <= 600) {
+    this.orientation = IgxStepperOrientation.Vertical
+  } else {
+    this.orientation = IgxStepperOrientation.Horizontal ;
+  }
+}
 
 
     
