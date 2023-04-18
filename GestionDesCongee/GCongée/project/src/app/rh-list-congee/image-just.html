@@ -1,3 +1,34 @@
-<div>
-    <img [src]="'http://127.0.0.1:5000/getImage/' + data.justification" />
-</div>
+    <div class="Justif">
+      <img  [src]="'http://127.0.0.1:5000/getImage/' + data.justification" />
+
+    </div>
+   
+    
+  
+  
+<style>
+    .Justif{
+        width: 1200px;
+        height: 90vh;
+    }
+    /*.Justif img{
+        width: 1000px;
+        height: 50vh;
+    }*/
+    .btnClose{
+        position: relative;
+        top:-740px;
+        
+    }
+@media (max-width: 600px) {
+    .Justif{
+        width: 600px;
+        height: 90vh;
+    }
+    .Justif img{
+        width: 100%;
+        height: 90vh;
+    }
+    /* additional styles for dialog content */
+    }
+</style>
