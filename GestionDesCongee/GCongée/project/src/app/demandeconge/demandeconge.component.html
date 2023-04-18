@@ -3,7 +3,7 @@
     </igx-buttongroup>
 </div>
 
-<igx-stepper #stepper [linear]="linear">
+<igx-stepper  [orientation]="orientation" #stepper [linear]="linear">
 
     <ng-template igxStepActiveIndicator>
         <igx-icon>edit</igx-icon>
@@ -87,4 +87,3 @@
     
 
 </igx-stepper>
-<!--[disabled]="!isFormValid()"-->
