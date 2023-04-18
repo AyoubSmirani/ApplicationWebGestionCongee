@@ -46,3 +46,19 @@ span{
     margin: auto 20px; 
     transform: translateY(-10px);
 } 
+@media screen and (max-width: 600px) {
+    .calendar .calendarInfoDescription{
+        flex-direction: column;
+        height: 200px;
+    }
+    span{
+        background-color: black;
+    }
+    .calendar .calendarInfoDescription .description p{
+        
+        font-size: 10px;
+     }
+     .calendar .calendarInfoDescription .DesContain{
+        transform: translateY(0px);
+     }
+}
