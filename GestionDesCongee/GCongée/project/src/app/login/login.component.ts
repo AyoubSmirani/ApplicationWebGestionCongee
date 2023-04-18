@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpSerService } from '../http-ser.service';
 import jwt_decode from "jwt-decode";
 import { delay } from 'rxjs';
+import { LoadingSerService } from '../loading-ser.service';
 
 
 
@@ -23,7 +24,7 @@ export class LoginComponent  {
 
   err:any = false // Initialisation de la variable err à faux
   // declaration des des services
-  constructor(private AuthService:HttpSerService,private router :Router) {
+  constructor(private AuthService:HttpSerService,private router :Router,private load:LoadingSerService) {
   
   }
 
@@ -38,6 +39,7 @@ export class LoginComponent  {
   login(){
       
     this.AuthService.login(this.user).subscribe ((data:any)=>{
+      this.load.showLoader()
     console.log(data);
     localStorage.setItem('token',data.token); // Stockage du token dans le Local Storage
     var token =  localStorage.getItem('token') ;  // Récupération du token depuis le Local Storage
@@ -45,11 +47,14 @@ export class LoginComponent  {
    console.log(decodedToken)
    // Redirection vers la page correspondante en fonction du rôle de l'utilisateur 
    if(decodedToken.role==='chef département'){ 
+     
     this.router.navigate(['directeurEquipe/',decodedToken.matricule])
    }
    else if(decodedToken.role==='employe'){
+ 
     this.router.navigate(['employee/',decodedToken.matricule])
    }else if(decodedToken.role==='RH'){
+
     this.router.navigate(['Rh/',decodedToken.matricule])
    }else{
     this.router.navigate(['admin/',decodedToken.matricule])
