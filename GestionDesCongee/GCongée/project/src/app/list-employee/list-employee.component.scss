@@ -191,6 +191,7 @@ img {
   margin-left: 50px;
   
  }
+
  
  .search igx-input-group {
   width: 350px;
@@ -202,4 +203,33 @@ img {
 .paginateContainer{
   display: flex;
   justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .gridList{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+      padding: 10px 20px;
+      
+  } 
+  .search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .search igx-input-group{
+    margin-left: auto;
+  }
+  .search igx-input-group {
+    width: 300px;
+    margin-right: 80px;
+  }
+  igx-dialog{
+    width: 100%;
+}
+.form{
+width: 100%;
+height: 50vh;
+}
 }
