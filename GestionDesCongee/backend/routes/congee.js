@@ -2,7 +2,7 @@ const express = require("express");
 const congeeController = require("../Controllers/congee_Controller.js");
 const router = express.Router();
 const multer = require('multer');
-
+const db = require("../DB/database.js")
 filename = ''
 
 const mystorage = multer.diskStorage(
