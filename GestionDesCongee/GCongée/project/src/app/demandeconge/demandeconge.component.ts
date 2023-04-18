@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IButtonGroupEventArgs } from 'igniteui-angular';
+import { IButtonGroupEventArgs, IgxStepperOrientation } from 'igniteui-angular';
 import { delay } from 'rxjs';
 import { HttpSerService } from '../http-ser.service';
 import { LoadingSerService } from '../loading-ser.service';
@@ -23,6 +23,8 @@ export class DemandecongeComponent implements OnInit{
   controleFileType:boolean = true
   Alerttitle:string = ''
   message:string = ''
+  orientation!:IgxStepperOrientation
+  screenWidth!: number;
  // chouf il stepper fil site 5atar fasa5t minha controle saisie
  // declaration des services
  constructor(private http:HttpSerService,private activated:ActivatedRoute,private load:LoadingSerService){}
@@ -56,7 +58,7 @@ export class DemandecongeComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
+    this.getScreenSize();
     // Récupération du numéro de matricule depuis l'URL
     this.matricule = this.activated.snapshot.paramMap.get('matricule')
     // Appel au serveur pour récupérer les informations de l'employé correspondant
@@ -210,4 +212,15 @@ export class DemandecongeComponent implements OnInit{
 
   
 
+  
+  
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?: any) {
+    this.screenWidth = window.innerWidth;
+    if (this.screenWidth <= 600) {
+      this.orientation = IgxStepperOrientation.Vertical
+    } else {
+      this.orientation = IgxStepperOrientation.Horizontal ;
+    }
+  }
 }
