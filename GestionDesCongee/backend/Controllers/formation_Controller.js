@@ -69,10 +69,12 @@ db.query("SELECT  title,start,end,color,nomCentre,duree	 FROM gformation,employe
            rows[0].start = `${year1}-${month1}-${day1}`;
            rows[0].end = `${year2}-${month2}-${day2}`;
            console.log(rows[0].end)
-       
+           
               res.send(rows)
+            }else{
+                  res.send(rows)
             }
-            res.send(rows)
+          
        }else{
            res.send({error:err.message})
        }
